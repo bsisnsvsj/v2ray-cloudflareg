@@ -1,9 +1,9 @@
 name = "v2ray-worker"
 type = "javascript"
-account_id = "CF_ACCOUNT_ID"
+account_id = "bd89d9872587cdfedce7b62b016706b0"
 workers_dev = true
 compatibility_date = "2024-01-01"
 
 kv_namespaces = [
-  { binding = "KV", id = "KV_NAME" }
+  { binding = "KV", id = "v2ray-store" }
 ]
