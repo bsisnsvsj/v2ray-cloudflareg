@@ -1,11 +1,9 @@
 {
-  "name": "v2ray-worker",
+  "name": "v2ray-cloudflare-worker",
   "version": "1.0.0",
-  "description": "V2Ray over Cloudflare Workers",
   "main": "index.js",
   "scripts": {
-    "start": "echo Deploying..."
+    "start": "wrangler dev"
   },
-  "author": "you",
-  "license": "MIT"
+  "dependencies": {}
 }
