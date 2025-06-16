@@ -1,0 +1,30 @@
+name: ⛅ Deploy V2Ray to Cloudflare Workers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Replace placeholders in wrangler.toml
+        run: |
+          sed -i "s/CF_ACCOUNT_ID/${{ secrets.CF_ACCOUNT_ID }}/g" wrangler.toml
+          sed -i "s/KV_NAME/${{ secrets.KV_NAME }}/g" wrangler.toml
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
