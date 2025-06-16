@@ -1,16 +1,8 @@
 name = "v2ray-worker"
-type = "javascript"
-
-account_id = "bd89d9872587cdfedce7b62b016706b0"  # ← استبدله بـ Account ID الخاص بك
+main = "index.js"
+account_id = "bd89d9872587cdfedce7b62b016706b0"
 workers_dev = true
 
 kv_namespaces = [
-  { binding = "V2RAY_STORE", id = "", preview_id = "04374604780e4140b0b7ccdaff218afe" } # ← اترك id فارغ مؤقتًا إذا ما مسوي KV
+  { binding = "V2RAY_STORE", id = "04374604780e4140b0b7ccdaff218afe" }
 ]
-
-[build]
-command = "npm install"
-
-[build.upload]
-format = "modules"
-main = "index.js"
