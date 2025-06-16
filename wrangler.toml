@@ -13,4 +13,4 @@ command = "npm install"
 
 [build.upload]
 format = "modules"
-main = "./index.js"
+main = "index.js"
