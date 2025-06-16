@@ -6,3 +6,5 @@ workers_dev = true
 kv_namespaces = [
   { binding = "V2RAY_STORE", id = "04374604780e4140b0b7ccdaff218afe" }
 ]
+
+compatibility_date = "2025-06-16"
