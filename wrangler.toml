@@ -1,9 +1,16 @@
 name = "v2ray-worker"
 type = "javascript"
-account_id = "bd89d9872587cdfedce7b62b016706b0"
+
+account_id = "bd89d9872587cdfedce7b62b016706b0"  # ← استبدله بـ Account ID الخاص بك
 workers_dev = true
-compatibility_date = "2024-01-01"
 
 kv_namespaces = [
-  { binding = "KV", id = "v2ray-store" }
+  { binding = "V2RAY_STORE", id = "", preview_id = "04374604780e4140b0b7ccdaff218afe" } # ← اترك id فارغ مؤقتًا إذا ما مسوي KV
 ]
+
+[build]
+command = "npm install"
+
+[build.upload]
+format = "modules"
+main = "./index.js"
